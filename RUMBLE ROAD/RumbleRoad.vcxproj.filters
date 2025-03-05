@@ -55,12 +55,6 @@
     <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\particle_handler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\text_game_object.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\drawing_game_object.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include\imgui\imgui.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -160,8 +154,6 @@
     <None Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\explosion_particle_fragment_shader.glsl" />
     <None Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\rocket_particle_vertex_shader.glsl" />
     <None Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\rocket_particle_fragment_shader.glsl" />
-    <None Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\text_fragment_shader.glsl" />
-    <None Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\drawing_fragment_shader.glsl" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

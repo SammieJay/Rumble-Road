@@ -78,13 +78,9 @@ void Game::Init(void)
     sprite_shader_.Init((resources_directory_g+std::string("/sprite_vertex_shader.glsl")).c_str(), (resources_directory_g+std::string("/sprite_fragment_shader.glsl")).c_str());
     particle_shader_.Init((resources_directory_g + std::string("/particle_vertex_shader.glsl")).c_str(), (resources_directory_g + std::string("/particle_fragment_shader.glsl")).c_str());
     
-    //Init UI Shaders
-    text_shader_.Init((resources_directory_g + std::string("/sprite_vertex_shader.glsl")).c_str(), (resources_directory_g + std::string("/text_fragment_shader.glsl")).c_str());
-    drawing_shader_.Init((resources_directory_g + std::string("/sprite_vertex_shader.glsl")).c_str(), (resources_directory_g + std::string("/drawing_fragment_shader.glsl")).c_str());
-    
     
     //Initialize Game Object Manager and pass in initialized shader pointers
-    gameObjectManager = new ObjectManager(sprite_, &sprite_shader_, &particle_shader_, &text_shader_, &drawing_shader_, resources_directory_g, window_);
+    gameObjectManager = new ObjectManager(sprite_, &sprite_shader_, &particle_shader_, resources_directory_g, window_);
 
     // Initialize time
     current_time_ = 0.0;
@@ -281,15 +277,8 @@ void Game::Render(void){
     float camera_zoom = 0.06f;
     glm::mat4 camera_zoom_matrix = glm::scale(glm::mat4(1.0f), glm::vec3(camera_zoom, camera_zoom, camera_zoom));
     glm::mat4 view_matrix = window_scale_matrix * camera_zoom_matrix * camera_position_matrix;
-    glm::mat4 screen_matrix = window_scale_matrix * camera_zoom_matrix;
 
     std::vector<ParticleSystem*> particleSystems;
-    
-    //RENDER UI ELEMENTS
-    for (int i = 0; i < gameObjectManager->numUIelements(); i++) {
-        TextGameObject* element = gameObjectManager->GetTextObj(i);
-        if (element->isShowing())element->Render(screen_matrix, current_time_);
-    }
 
 
     //RENDER ALL GAME OBJECTS

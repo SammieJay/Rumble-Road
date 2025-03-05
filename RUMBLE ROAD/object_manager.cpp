@@ -3,8 +3,8 @@
 namespace game {
 	
 	//Constructor
-	ObjectManager::ObjectManager(Geometry* sprite, Shader* spriteShader, Shader* particleShader, Shader* textShader, Shader* drawingShader, std::string resourceDir, GLFWwindow* window_) :
-	sprite_(sprite), spriteShader_(spriteShader), text_shader_(textShader), drawing_shader_(drawingShader), resourceDir_(resourceDir),window_(window_){
+	ObjectManager::ObjectManager(Geometry* sprite, Shader* spriteShader, Shader* particleShader, std::string resourceDir, GLFWwindow* window_) :
+	sprite_(sprite), spriteShader_(spriteShader), resourceDir_(resourceDir),window_(window_){
 		//Constructor just calls generation of random generator
 		//other initialization is triggered by game object when ready
 		//see game->setup() for initialization calls
@@ -28,11 +28,6 @@ namespace game {
 			delete staticObj;
 		}
 		staticObjArr.clear();
-
-		for (GameObject* ui : textObjArr) {
-			delete ui;
-		}
-		textObjArr.clear();
 
 		delete player;
 		delete background;
@@ -90,18 +85,6 @@ namespace game {
 		enemyParticleHandler->getParticleSys(ParticleHandler::Explosion)->SetScale(glm::vec2(0.3, 0.3));//set explosion effect size
 	}
 
-
-	void ObjectManager::initUI(void) {
-		//Texture Handler Setup
-		uiTexHandler = new TextureHandler(resourceDir_ + "/textures/font.png");
-
-		TextGameObject* text = new TextGameObject(glm::vec3(0.0f, -2.0f, 0.0f), sprite_, text_shader_, uiTexHandler->getMainTex());
-		text->SetScale(glm::vec2(15.0, 7.0));
-		text->SetText("Hello World!!");
-		textObjArr.push_back(text);
-	}
-
-
 	//Spawning Functions:
 	//	Used to create and spawn a new enemy obj at a specified location
 	void ObjectManager::spawnEnemy(const glm::vec3& position, EnemyGameObject::enemyType type) {
@@ -150,14 +133,6 @@ namespace game {
 			return nullptr;
 		}
 		else return staticObjArr[i];
-	}
-
-	TextGameObject* ObjectManager::GetTextObj(int i) const {
-		if (i >= textObjArr.size()) {
-			cout << "ERROR: Requested index Larger than UI Obj array" << endl;
-			return nullptr;
-		}
-		else return textObjArr[i];
 	}
 
 	//Dammage Distribution Functions
@@ -262,11 +237,6 @@ namespace game {
 				(*StaticIt)->Update(delta_time);
 				++StaticIt;
 			}
-		}
-
-		//Update UI elements on screen
-		for (GameObject* element : textObjArr) {
-			element->Update(delta_time);
 		}
 
 		// Update BACKGROUND game object
