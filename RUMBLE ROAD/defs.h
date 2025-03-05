@@ -14,6 +14,12 @@
 #include <cmath>
 #include <thread>
 
+//imGUI inclusions
+#include "imgui/imgui.h"
+#include "imgui/imgui_impl_opengl3.h"
+#include "imgui/imgui_impl_glfw.h"
+
+
 //Definitions for game stats
 #define ROCKET_DMG 3
 #define BULLET_DMG 0.75

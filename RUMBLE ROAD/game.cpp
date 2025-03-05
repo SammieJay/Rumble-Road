@@ -32,8 +32,10 @@ void Game::Init(void)
         throw(std::runtime_error(std::string("Could not create window")));
     }
 
-    //Allow polling of cursor position
 
+
+
+    //Allow polling of cursor position
     // Make the window's OpenGL context the current one
     glfwMakeContextCurrent(window_);
 
@@ -47,6 +49,23 @@ void Game::Init(void)
 
     // Set event callbacks
     glfwSetFramebufferSizeCallback(window_, ResizeCallback);
+
+    //Print Version Info
+    const GLubyte* version = glGetString(GL_VERSION);
+    cout << "OpenGL Version: " << version << endl;
+
+
+    //init imGUI (#version 460)
+    
+    IMGUI_CHECKVERSION();
+    ImGui::CreateContext();
+    ImGuiIO& io = ImGui::GetIO(); (void)io;
+    io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
+    
+    ImGui::StyleColorsDark();
+    ImGui_ImplGlfw_InitForOpenGL(window_, true);
+    ImGui_ImplOpenGL3_Init("#version 460");
+
 
     // Initialize sprite geometry
     sprite_ = new Sprite();
@@ -77,6 +96,11 @@ Game::~Game()
     // Free memory for all objects
     // Only need to delete objects that are not automatically freed
     
+    //Terminate UI
+    ImGui_ImplOpenGL3_Shutdown();
+    ImGui_ImplGlfw_Shutdown();
+    ImGui::DestroyContext();
+
     //std::cout << "Game Destruct Called, Program Ending" << std::endl;
     delete sprite_;
     delete gameObjectManager;
@@ -93,7 +117,7 @@ void Game::Setup(void)
  
     // Setup the game world
     gameObjectManager->initTextures();
-    gameObjectManager->initUI();
+    //gameObjectManager->initUI();
     gameObjectManager->initObjects();
     gameObjectManager->initParticles();
     
@@ -165,8 +189,26 @@ void Game::MainLoop(void)
         // Update all the game objects
         Update(delta_time);
 
+        //Update GUI
+        ImGui_ImplOpenGL3_NewFrame();
+        ImGui_ImplGlfw_NewFrame();
+        ImGui::NewFrame();
+
+        //Run UI Code
+        ImGui::Begin("Game HUD", NULL, //set flags to make ui immovable and no title
+            ImGuiWindowFlags_NoTitleBar |
+            ImGuiWindowFlags_NoResize |
+            ImGuiWindowFlags_NoMove);
+
+        ImGui::Text("FPS: %.1f", ImGui::GetIO().Framerate);
+        ImGui::End();//end UI code
+
         // Render all the game objects
         Render();
+
+        //Render GUI Elements
+        ImGui::Render();
+        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
         // Push buffer drawn in the background onto the display
         glfwSwapBuffers(window_);

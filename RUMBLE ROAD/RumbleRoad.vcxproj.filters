@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\file_utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\sprite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\texture_handler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\object_manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\game_object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\player_game_object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\enemy_game_object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\collectible_game_object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\dynamic_game_object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\static_game_object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\projectile_game_object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\particle_system.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\particles.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\particle_handler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\text_game_object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\drawing_game_object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include\imgui\imgui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include\imgui\imgui_demo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include\imgui\imgui_draw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include\imgui\imgui_impl_glfw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include\imgui\imgui_impl_opengl3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include\imgui\imgui_tables.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include\imgui\imgui_widgets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\file_utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\game_object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\player_game_object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\geometry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\sprite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\texture_handler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\defs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\object_manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\enemy_game_object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\collectible_game_object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\dynamic_game_object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\static_game_object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\random_gen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\projectile_game_object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\particle_system.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\particles.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\particle_handler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\text_game_object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\drawing_game_object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\sprite_vertex_shader.glsl" />
+    <None Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\sprite_fragment_shader.glsl" />
+    <None Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\particle_vertex_shader.glsl" />
+    <None Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\particle_fragment_shader.glsl" />
+    <None Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\explosion_particle_vertex_shader.glsl" />
+    <None Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\explosion_particle_fragment_shader.glsl" />
+    <None Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\rocket_particle_vertex_shader.glsl" />
+    <None Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\rocket_particle_fragment_shader.glsl" />
+    <None Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\text_fragment_shader.glsl" />
+    <None Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\drawing_fragment_shader.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{1CA76915-EF05-3154-81D3-F13489F3BE22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{6E6E4193-E87B-3A07-8729-BF683C1139AA}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

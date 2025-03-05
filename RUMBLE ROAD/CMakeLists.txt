@@ -95,6 +95,11 @@ target_link_libraries(${PROJ_NAME} ${GLEW_LIBRARY})
 target_link_libraries(${PROJ_NAME} ${GLFW_LIBRARY})
 target_link_libraries(${PROJ_NAME} ${SOIL_LIBRARY})
 
+# Link ImGui Library
+set(IMGUI_DIR ${LIBRARY_PATH}/include/imgui)
+file(GLOB IMGUI_SRC ${IMGUI_DIR}/*.cpp)
+target_sources(${PROJ_NAME} PRIVATE ${IMGUI_SRC})
+
 # The rules here are specific to Windows Systems
 if(WIN32)
     # Avoid ZERO_CHECK target in Visual Studio
