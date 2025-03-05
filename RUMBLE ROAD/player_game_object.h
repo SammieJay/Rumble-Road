@@ -23,6 +23,11 @@ namespace game {
             // Update function for moving the player object around
             void Update(double delta_time) override;
 
+            //Getters for UI display
+            int getBulletMag() { return turretMag; }
+            int getRocketMag() { return rocketCount; }
+            bool turretReloading() { return turretReloadClock->isRunning(); }
+
         private:
             GLFWwindow* windowPtr;//Player keeps a pointer to the game's window so that the player obj can acess keypress updates
             const string ResourceDir = RESOURCES_DIRECTORY;//So the player object can acess texture assets
@@ -61,6 +66,7 @@ namespace game {
             StaticGameObject* turret;//Turret object on car
             glm::vec3 localTurretPos;//position of turret relative to car
             Timer* turretFireRateClock;
+            Timer* turretReloadClock;
             int turretMag;
             int turretMaxAmmo;
             float turretReloadTime;

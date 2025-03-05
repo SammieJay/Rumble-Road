@@ -41,6 +41,7 @@ DynamicGameObject(position, geom, shader, Player, PLAYER_MAX_HEALTH)
     //Timer Inits
     rocketFireRateClock = new Timer("Rocket Cooldown");
     turretFireRateClock = new Timer("Turret Cooldown");
+    turretReloadClock = new Timer("Turret Reload");
     infiniteAmmoTimer = new Timer("Infinite Ammo");
 
 
@@ -59,6 +60,7 @@ PlayerGameObject::~PlayerGameObject() {
         subObjArr.clear();
     }
     delete turretFireRateClock;
+    delete turretReloadClock;
     delete rocketFireRateClock;
     delete infiniteAmmoTimer;
     delete rocketTexture;
@@ -111,7 +113,8 @@ void PlayerGameObject::handlePlayerControls(double delta_time)
         fireTurret(20, 2);
     }
     if (glfwGetKey(windowPtr, GLFW_KEY_R) == GLFW_PRESS) {
-        reloadTurret();
+        turretReloadClock->Start(turretReloadTime);
+        turretMag = 0;
     }
 }
 
@@ -155,7 +158,7 @@ void PlayerGameObject::addWheelTraction() {
     //Apply Braking Force to Velocity Vector
     velocity -= brakingVector;
 
-    //DEBUGGING OUTPUTS PLEASE IGNORE
+    //DEBUGGING OUTPUTS CAN IGNORE
     /*
     if (wheelTraction) { cout << "Wheel Traction!"; }
     else { cout << "No Wheel Traction!"; }
@@ -226,14 +229,14 @@ void PlayerGameObject::initSubObjects() {
     
     //Initialize Turret Related Values
     localTurretPos = glm::vec3(-0.4, 0, 0);
-    turretMaxAmmo = 16;
+    turretMaxAmmo = MAX_BULLETS;
     turretMag = turretMaxAmmo;
     turretReloadTime = 1.5f;
     turretShootCooldown = 0.1f;
     infiniteAmmoActive = false;
 
     //Initialize rocket related values
-    rocketCount = 3;
+    rocketCount = MAX_ROCKETS;
     rocketCooldown = 2.5f;
 
     //Initialize Turret Object
@@ -259,25 +262,22 @@ void PlayerGameObject::updateTurretLocation(float carAngle, glm::vec3 carPos) {
 
 //Function that shoots the turret and reloads when necessary
 void PlayerGameObject::fireTurret(float speed, float lifeSpan) {
-    if (turretFireRateClock->isFinished() || !turretFireRateClock->isRunning()) {//if the fire rate clock is not running or is finished, shoot a bullet
+    if ((turretFireRateClock->isFinished() && (turretReloadClock->isFinished()))
+        || (!turretFireRateClock->isRunning() && !turretReloadClock->isRunning())) {//if the fire rate clock is not running or is finished, shoot a bullet
         ProjectileGameObject* bullet = new ProjectileGameObject(geometry_, shader_, bulletTexture, lifeSpan, speed, glm::vec2(1.5,0.5), turret, ProjectileGameObject::Bullet);
 
         projectileArr.push_back(bullet);
         if(!infiniteAmmoActive)turretMag--;
         if (turretMag == 0 && !infiniteAmmoActive) {
-            turretMag = turretMaxAmmo;
-            turretFireRateClock->Start(turretReloadTime);
+            turretReloadClock->Start(turretReloadTime);
         }
         else turretFireRateClock->Start(turretShootCooldown);
     }
 }
 
-//Function to reload turret
+//Function to reload turret (set magazine value to MAX_BULLETS if reload is complete)
 void PlayerGameObject::reloadTurret() {
-    if (turretMag > 0 && turretMag < turretMaxAmmo && !infiniteAmmoActive) {
-        turretMag = turretMaxAmmo;
-        turretFireRateClock->Start(turretReloadTime);
-    }
+    turretMag = MAX_BULLETS;
 }
 
 //=====PLAYAER ROCKET FUNCTION=====
@@ -306,7 +306,7 @@ void PlayerGameObject::activateItem(int type) {
         cout << "Health Pack Collected, Health is now: " << health << endl;
     }
     if (type == CollectibleGameObject::rocket) {
-        rocketCount = 3;
+        rocketCount = MAX_ROCKETS;
         cout << "Rockets Restocked to 3" << endl;
     }
     if (type == CollectibleGameObject::infiniteAmmo) {
@@ -336,15 +336,17 @@ void PlayerGameObject::Update(double delta_time) {
         const glm::vec3 newPos = applyVelocity(delta_time);
         updateTurretLocation(newAngle, newPos);
     }
-    
-
-    
 
     //Check Infinite Ammo Timer
     if (infiniteAmmoTimer->isFinished()) {
         infiniteAmmoActive = false;
         cout << "Infinite Ammo Expired" << endl;
-    } 
+    }
+
+    //Check reloading timer
+    if (turretReloadClock->isFinished() && turretMag == 0) {
+        reloadTurret();
+    }
     
     // Call the parent's update method to move the object in standard way, if desired
     DynamicGameObject::Update(delta_time);

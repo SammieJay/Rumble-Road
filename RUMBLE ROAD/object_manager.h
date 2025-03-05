@@ -43,7 +43,6 @@ namespace game {
         void initTextures(void);
         void initObjects(void);
         void initParticles(void);
-        void initUI(void);
 
         //Fetch functions for the various kinds of GameObject
         PlayerGameObject* Player(void) { return player; }

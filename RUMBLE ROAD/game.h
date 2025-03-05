@@ -13,6 +13,7 @@
 #include "sprite.h"
 #include "shader.h"
 #include "particles.h"
+#include "ui_handler.h"
 
 namespace game {
 
@@ -57,6 +58,9 @@ namespace game {
 
             // Object manager to contain & manage all game objects
             ObjectManager* gameObjectManager;
+
+            //UI handler to handle GUI rendering
+            uiHandler* uiHandler_;
 
             RandomGenerator randomGen;
 
