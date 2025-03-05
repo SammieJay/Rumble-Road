@@ -1,0 +1,51 @@
+---car.png---
+---red_car.png---
+---lil_guy.png---
+Source: https://tmd-studios.itch.io/cars
+Credit: tmdstudios.wordpress.com
+Lisence: CC0*
+
+---ground.png---
+Source: https://jarpdzonson.itch.io/sci-fi-wasteland-series
+Lisence: CC0*
+
+---black_car.png---
+Source: https://tokka.itch.io/top-down-car
+Lisence: CC0*
+
+---Explosion.png---
+Source: https://opengameart.org/content/star-explosion
+Lisence: CC0
+
+---health_pack.png---
+source: https://opengameart.org/content/various-inventory-24-pixel-icon-set
+lisenceL CC-BY 3.0
+
+---Shield.png---
+source: https://opengameart.org/content/shield-2
+Lisence: CC0
+
+---td_basic_towers sprites---
+- rocket.png
+- bullet.png
+- mg.png
+- tower.png
+- rocket_launcher.png
+Source: https://opengameart.org/content/tower-defence-basic-towers
+Lisence: CC0
+
+---rocket item sprites---
+rocket_bundle_item.png
+rocket_item.png
+source: https://opengameart.org/content/rocket-launcher-ammo
+lisence: OGA-BY 3.0
+
+---health and ammo item sprites---
+health_item.png
+ammo_item.png
+Source: https://opengameart.org/content/simple-shooter-icons
+Lisence: GPL 2.0, GPL 3.0, CC-BY-SA 3.0
+
+
+
+*assumed CC0 as the creator has given explicit permission for all free and commercial use
