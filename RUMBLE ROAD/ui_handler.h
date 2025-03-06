@@ -7,7 +7,7 @@
 namespace game {
 	class uiHandler {
 	public:
-		uiHandler(ObjectManager*, GLFWwindow*);
+		uiHandler(ObjectManager*, GLFWwindow*, int*);
 		~uiHandler();
 
 		void initUI();
@@ -18,6 +18,7 @@ namespace game {
 		ObjectManager* objManager;
 		GLFWwindow* window_;
 		PlayerGameObject* player_;
+		int* numTowers;
 
 		//Window Height and Width
 		const int uiH = 100;

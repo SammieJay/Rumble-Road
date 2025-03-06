@@ -1,9 +1,10 @@
 #include "ui_handler.h"
 
 namespace game {
-	uiHandler::uiHandler(ObjectManager* objMngr, GLFWwindow* window) {
+	uiHandler::uiHandler(ObjectManager* objMngr, GLFWwindow* window, int* remainingTowers) {
 		objManager = objMngr;
 		window_ = window;
+		numTowers = remainingTowers;
 	}
 
 	uiHandler::~uiHandler() {
@@ -51,6 +52,8 @@ namespace game {
 
 		//Rocket Counter
 		ImGui::Text("Rockets: %d/%d", player_->getRocketMag(), MAX_ROCKETS);
+
+		ImGui::Text("Towers Remaining: %d/%d", *numTowers, NUM_TOWERS);
 		
 		
 		ImGui::End();//end UI code

@@ -80,6 +80,8 @@ namespace game {
             Timer* enemySpawnTimer;
             Timer* itemSpawnTimer;
 
+            int towerCount;
+
 
     }; // class Game
 

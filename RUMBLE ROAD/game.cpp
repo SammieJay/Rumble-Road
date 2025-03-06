@@ -70,7 +70,7 @@ void Game::Init(void)
     gameObjectManager = new ObjectManager(sprite_, &sprite_shader_, &particle_shader_, resources_directory_g, window_);
 
     //ui setup
-    uiHandler_ = new uiHandler(gameObjectManager, window_);
+    uiHandler_ = new uiHandler(gameObjectManager, window_, &towerCount);
 
 
     // Initialize time
@@ -113,7 +113,7 @@ void Game::Setup(void)
 
     gameObjectManager->spawnEnemy(glm::vec3(3, 3, 0), EnemyGameObject::Bomb);
     
-    //spawn in 6 towers at random locations at start of game
+    //spawn in NUM_TOWERS towers at random locations at start of game
     for (int i = 0; i < NUM_TOWERS; i++) {
         glm::vec3 pos = randomGen.randomPoint();
         gameObjectManager->spawnEnemy(pos, EnemyGameObject::Tower);
@@ -260,7 +260,7 @@ void Game::Render(void){
     //RENDER ALL GAME OBJECTS
 
     // Render all ENEMY game objects
-    int towerCount = 0;
+    towerCount = 0;
     for (int i = 0; i < gameObjectManager->numEnemies(); i++) {
         EnemyGameObject* enemy = gameObjectManager->GetEnemy(i);
         
