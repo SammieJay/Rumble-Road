@@ -25,6 +25,7 @@ DynamicGameObject(position, geom, shader, Player, PLAYER_MAX_HEALTH)
 
     turnRate = 0;//player turning variable *used to smooth out player turning
    
+    isDrifting = false;
 
     //Projectile Related
     rocketTexture = new TextureHandler(ResourceDir + "/textures/rocket.png");
@@ -141,7 +142,7 @@ void PlayerGameObject::addWheelTraction() {
     if ((sideVelocity>0.65*curSpeed || sideVelocity > 4)&&wheelTraction) {
         wheelTraction = false;
     }
-    if ((curSpeed < 0.2 || sideVelocity < 0.075*curSpeed || sideVelocity < 2)&&!wheelTraction) {
+    if ((curSpeed < 0.2 || sideVelocity < 0.02*curSpeed || sideVelocity < 2)&&!wheelTraction) {
         wheelTraction = true;
     }
 

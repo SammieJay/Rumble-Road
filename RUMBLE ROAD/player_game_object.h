@@ -27,6 +27,7 @@ namespace game {
             int getBulletMag() { return turretMag; }
             int getRocketMag() { return rocketCount; }
             bool turretReloading() { return turretReloadClock->isRunning(); }
+            bool Drifting() { return !wheelTraction; } //returns whether player is currently in state of drift
 
         private:
             GLFWwindow* windowPtr;//Player keeps a pointer to the game's window so that the player obj can acess keypress updates
@@ -42,7 +43,7 @@ namespace game {
 
             glm::vec3 velocity;    //Player's total velocity vector
             bool wheelTraction;    //boolean determines whether the wheels are currently in a state of high traction or low traction
-
+            bool isDrifting;       //whether the player is currently drifting
             
 
             //Player Movement Functions
@@ -52,6 +53,7 @@ namespace game {
             void capSpeed();
             const glm::vec3 applyVelocity(double delta_time);
             float applyRotation(double delta_time);
+           
 
             //Projectile Related
             TextureHandler* rocketTexture;
