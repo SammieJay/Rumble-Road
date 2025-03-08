@@ -49,7 +49,7 @@ namespace game {
             //Player Movement Functions
             void handlePlayerControls(double delta_time);
             void addVelocity(float amnt, glm::vec3 dir);
-            void addWheelTraction();
+            void addWheelTraction(double delta_time);
             void capSpeed();
             const glm::vec3 applyVelocity(double delta_time);
             float applyRotation(double delta_time);

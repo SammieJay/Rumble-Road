@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/vonra/OneDrive/Desktop/Personal Game Dev/Rumble-Road/RUMBLE ROAD
+# Install script for directory: C:/Users/Samuel/Desktop/Game Dev Projects/Rumble-Road/RUMBLE ROAD
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/vonra/OneDrive/Desktop/Personal Game Dev/Rumble-Road/RUMBLE ROAD/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Samuel/Desktop/Game Dev Projects/Rumble-Road/RUMBLE ROAD/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

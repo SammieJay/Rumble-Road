@@ -1,26 +1,26 @@
-C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\file_utils.cpp;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\file_utils.obj
-C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\game.cpp;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\game.obj
-C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\main.cpp;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\main.obj
-C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\shader.cpp;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\shader.obj
-C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\sprite.cpp;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\sprite.obj
-C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\texture_handler.cpp;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\texture_handler.obj
-C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\object_manager.cpp;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\object_manager.obj
-C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\game_object.cpp;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\game_object.obj
-C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\player_game_object.cpp;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\player_game_object.obj
-C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\enemy_game_object.cpp;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\enemy_game_object.obj
-C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\collectible_game_object.cpp;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\collectible_game_object.obj
-C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\dynamic_game_object.cpp;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\dynamic_game_object.obj
-C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\static_game_object.cpp;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\static_game_object.obj
-C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\timer.cpp;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\timer.obj
-C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\projectile_game_object.cpp;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\projectile_game_object.obj
-C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\particle_system.cpp;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\particle_system.obj
-C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\particles.cpp;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\particles.obj
-C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\particle_handler.cpp;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\particle_handler.obj
-C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\ui_handler.cpp;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\ui_handler.obj
-C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include\imgui\imgui.cpp;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\imgui.obj
-C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include\imgui\imgui_demo.cpp;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\imgui_demo.obj
-C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include\imgui\imgui_draw.cpp;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\imgui_draw.obj
-C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include\imgui\imgui_impl_glfw.cpp;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\imgui_impl_glfw.obj
-C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include\imgui\imgui_impl_opengl3.cpp;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\imgui_impl_opengl3.obj
-C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include\imgui\imgui_tables.cpp;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\imgui_tables.obj
-C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include\imgui\imgui_widgets.cpp;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\imgui_widgets.obj
+C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\file_utils.cpp;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\file_utils.obj
+C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\game.cpp;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\game.obj
+C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\main.cpp;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\main.obj
+C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\shader.cpp;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\shader.obj
+C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\sprite.cpp;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\sprite.obj
+C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\texture_handler.cpp;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\texture_handler.obj
+C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\object_manager.cpp;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\object_manager.obj
+C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\game_object.cpp;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\game_object.obj
+C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\player_game_object.cpp;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\player_game_object.obj
+C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\enemy_game_object.cpp;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\enemy_game_object.obj
+C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\collectible_game_object.cpp;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\collectible_game_object.obj
+C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\dynamic_game_object.cpp;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\dynamic_game_object.obj
+C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\static_game_object.cpp;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\static_game_object.obj
+C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\timer.cpp;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\timer.obj
+C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\projectile_game_object.cpp;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\projectile_game_object.obj
+C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\particle_system.cpp;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\particle_system.obj
+C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\particles.cpp;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\particles.obj
+C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\particle_handler.cpp;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\particle_handler.obj
+C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\ui_handler.cpp;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\ui_handler.obj
+C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\include\imgui\imgui.cpp;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\imgui.obj
+C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\include\imgui\imgui_demo.cpp;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\imgui_demo.obj
+C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\include\imgui\imgui_draw.cpp;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\imgui_draw.obj
+C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\include\imgui\imgui_impl_glfw.cpp;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\imgui_impl_glfw.obj
+C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\include\imgui\imgui_impl_opengl3.cpp;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\imgui_impl_opengl3.obj
+C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\include\imgui\imgui_tables.cpp;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\imgui_tables.obj
+C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\include\imgui\imgui_widgets.cpp;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\RumbleRoad.dir\Debug\imgui_widgets.obj

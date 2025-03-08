@@ -22,7 +22,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{7D7967A2-6D68-3D3F-ACA2-B479A65C3EDB}</ProjectGuid>
+    <ProjectGuid>{EE9B6FD6-94A2-3A9F-B9B5-0F05F7CF8B05}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -59,25 +59,25 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">RumbleRoad.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">RumbleRoad_d</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">RumbleRoad.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">RumbleRoad</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">RumbleRoad.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">RumbleRoad</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">RumbleRoad.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">RumbleRoad</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
@@ -86,7 +86,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -102,10 +102,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -113,13 +113,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>opengl32.lib;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\lib\glew32s.lib;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\lib\glfw3.lib;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\lib\SOIL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\lib\glew32s.lib;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\lib\glfw3.lib;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\lib\SOIL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/Users/vonra/OneDrive/Desktop/Personal Game Dev/Rumble-Road/RUMBLE ROAD/Debug/RumbleRoad_d.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/vonra/OneDrive/Desktop/Personal Game Dev/Rumble-Road/RUMBLE ROAD/Debug/RumbleRoad_d.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Users/Samuel/Desktop/Game Dev Projects/Rumble-Road/RUMBLE ROAD/Debug/RumbleRoad_d.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Samuel/Desktop/Game Dev Projects/Rumble-Road/RUMBLE ROAD/Debug/RumbleRoad_d.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -128,7 +128,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -144,10 +144,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -155,13 +155,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>opengl32.lib;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\lib\glew32s.lib;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\lib\glfw3.lib;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\lib\SOIL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\lib\glew32s.lib;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\lib\glfw3.lib;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\lib\SOIL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/Users/vonra/OneDrive/Desktop/Personal Game Dev/Rumble-Road/RUMBLE ROAD/Release/RumbleRoad.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/vonra/OneDrive/Desktop/Personal Game Dev/Rumble-Road/RUMBLE ROAD/Release/RumbleRoad.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Users/Samuel/Desktop/Game Dev Projects/Rumble-Road/RUMBLE ROAD/Release/RumbleRoad.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Samuel/Desktop/Game Dev Projects/Rumble-Road/RUMBLE ROAD/Release/RumbleRoad.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -170,7 +170,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
@@ -186,10 +186,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -197,13 +197,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>opengl32.lib;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\lib\glew32s.lib;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\lib\glfw3.lib;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\lib\SOIL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\lib\glew32s.lib;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\lib\glfw3.lib;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\lib\SOIL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/Users/vonra/OneDrive/Desktop/Personal Game Dev/Rumble-Road/RUMBLE ROAD/MinSizeRel/RumbleRoad.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/vonra/OneDrive/Desktop/Personal Game Dev/Rumble-Road/RUMBLE ROAD/MinSizeRel/RumbleRoad.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Users/Samuel/Desktop/Game Dev Projects/Rumble-Road/RUMBLE ROAD/MinSizeRel/RumbleRoad.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Samuel/Desktop/Game Dev Projects/Rumble-Road/RUMBLE ROAD/MinSizeRel/RumbleRoad.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -212,7 +212,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -227,10 +227,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -238,13 +238,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>opengl32.lib;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\lib\glew32s.lib;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\lib\glfw3.lib;C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\lib\SOIL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\lib\glew32s.lib;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\lib\glfw3.lib;C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\lib\SOIL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/Users/vonra/OneDrive/Desktop/Personal Game Dev/Rumble-Road/RUMBLE ROAD/RelWithDebInfo/RumbleRoad.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/vonra/OneDrive/Desktop/Personal Game Dev/Rumble-Road/RUMBLE ROAD/RelWithDebInfo/RumbleRoad.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Users/Samuel/Desktop/Game Dev Projects/Rumble-Road/RUMBLE ROAD/RelWithDebInfo/RumbleRoad.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Samuel/Desktop/Game Dev Projects/Rumble-Road/RUMBLE ROAD/RelWithDebInfo/RumbleRoad.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -252,69 +252,69 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\file_utils.h" />
-    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\game.h" />
-    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\game_object.h" />
-    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\player_game_object.h" />
-    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\shader.h" />
-    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\geometry.h" />
-    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\sprite.h" />
-    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\texture_handler.h" />
-    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\defs.h" />
-    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\object_manager.h" />
-    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\enemy_game_object.h" />
-    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\collectible_game_object.h" />
-    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\dynamic_game_object.h" />
-    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\static_game_object.h" />
-    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\timer.h" />
-    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\random_gen.h" />
-    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\projectile_game_object.h" />
-    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\particle_system.h" />
-    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\particles.h" />
-    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\particle_handler.h" />
-    <ClInclude Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\ui_handler.h" />
-    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\file_utils.cpp" />
-    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\game.cpp" />
-    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\main.cpp" />
-    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\shader.cpp" />
-    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\sprite.cpp" />
-    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\texture_handler.cpp" />
-    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\object_manager.cpp" />
-    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\game_object.cpp" />
-    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\player_game_object.cpp" />
-    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\enemy_game_object.cpp" />
-    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\collectible_game_object.cpp" />
-    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\dynamic_game_object.cpp" />
-    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\static_game_object.cpp" />
-    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\timer.cpp" />
-    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\projectile_game_object.cpp" />
-    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\particle_system.cpp" />
-    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\particles.cpp" />
-    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\particle_handler.cpp" />
-    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\ui_handler.cpp" />
-    <None Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\sprite_vertex_shader.glsl">
+    <ClInclude Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\file_utils.h" />
+    <ClInclude Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\game.h" />
+    <ClInclude Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\game_object.h" />
+    <ClInclude Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\player_game_object.h" />
+    <ClInclude Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\shader.h" />
+    <ClInclude Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\geometry.h" />
+    <ClInclude Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\sprite.h" />
+    <ClInclude Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\texture_handler.h" />
+    <ClInclude Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\defs.h" />
+    <ClInclude Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\object_manager.h" />
+    <ClInclude Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\enemy_game_object.h" />
+    <ClInclude Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\collectible_game_object.h" />
+    <ClInclude Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\dynamic_game_object.h" />
+    <ClInclude Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\static_game_object.h" />
+    <ClInclude Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\timer.h" />
+    <ClInclude Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\random_gen.h" />
+    <ClInclude Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\projectile_game_object.h" />
+    <ClInclude Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\particle_system.h" />
+    <ClInclude Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\particles.h" />
+    <ClInclude Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\particle_handler.h" />
+    <ClInclude Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\ui_handler.h" />
+    <ClCompile Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\file_utils.cpp" />
+    <ClCompile Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\game.cpp" />
+    <ClCompile Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\main.cpp" />
+    <ClCompile Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\shader.cpp" />
+    <ClCompile Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\sprite.cpp" />
+    <ClCompile Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\texture_handler.cpp" />
+    <ClCompile Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\object_manager.cpp" />
+    <ClCompile Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\game_object.cpp" />
+    <ClCompile Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\player_game_object.cpp" />
+    <ClCompile Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\enemy_game_object.cpp" />
+    <ClCompile Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\collectible_game_object.cpp" />
+    <ClCompile Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\dynamic_game_object.cpp" />
+    <ClCompile Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\static_game_object.cpp" />
+    <ClCompile Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\timer.cpp" />
+    <ClCompile Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\projectile_game_object.cpp" />
+    <ClCompile Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\particle_system.cpp" />
+    <ClCompile Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\particles.cpp" />
+    <ClCompile Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\particle_handler.cpp" />
+    <ClCompile Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\ui_handler.cpp" />
+    <None Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\sprite_vertex_shader.glsl">
     </None>
-    <None Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\sprite_fragment_shader.glsl">
+    <None Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\sprite_fragment_shader.glsl">
     </None>
-    <None Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\particle_vertex_shader.glsl">
+    <None Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\particle_vertex_shader.glsl">
     </None>
-    <None Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\particle_fragment_shader.glsl">
+    <None Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\particle_fragment_shader.glsl">
     </None>
-    <None Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\explosion_particle_vertex_shader.glsl">
+    <None Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\explosion_particle_vertex_shader.glsl">
     </None>
-    <None Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\explosion_particle_fragment_shader.glsl">
+    <None Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\explosion_particle_fragment_shader.glsl">
     </None>
-    <None Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\rocket_particle_vertex_shader.glsl">
+    <None Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\rocket_particle_vertex_shader.glsl">
     </None>
-    <None Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\RUMBLE ROAD\rocket_particle_fragment_shader.glsl">
+    <None Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\RUMBLE ROAD\rocket_particle_fragment_shader.glsl">
     </None>
-    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include\imgui\imgui.cpp" />
-    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include\imgui\imgui_demo.cpp" />
-    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include\imgui\imgui_draw.cpp" />
-    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include\imgui\imgui_impl_glfw.cpp" />
-    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include\imgui\imgui_impl_opengl3.cpp" />
-    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include\imgui\imgui_tables.cpp" />
-    <ClCompile Include="C:\Users\vonra\OneDrive\Desktop\Personal Game Dev\Rumble-Road\Libraries\include\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\include\imgui\imgui.cpp" />
+    <ClCompile Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\include\imgui\imgui_demo.cpp" />
+    <ClCompile Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\include\imgui\imgui_draw.cpp" />
+    <ClCompile Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\include\imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\include\imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\include\imgui\imgui_tables.cpp" />
+    <ClCompile Include="C:\Users\Samuel\Desktop\Game Dev Projects\Rumble-Road\Libraries\include\imgui\imgui_widgets.cpp" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>

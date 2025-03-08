@@ -1,5 +1,0 @@
-﻿  object_manager.cpp
-  text_game_object.cpp
-  GLM: rotate function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.
-  Generating Code...
-  RumbleRoad.vcxproj -> C:\Users\vonra\OneDrive\Desktop\RUMBLE ROAD\bin\Debug\RumbleRoad_d.exe

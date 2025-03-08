@@ -126,7 +126,7 @@ void PlayerGameObject::handlePlayerControls(double delta_time)
 //=====PLAYER MOVEMENT FUNCTIONS=====
 
 //function to apply tractionary forces to the car, at different speeds the wheels act differently to make a good feeling drift effect
-void PlayerGameObject::addWheelTraction() {
+void PlayerGameObject::addWheelTraction(double delta_time) {
     float sideVelocity = glm::dot(velocity, GetRight());
 
     glm::vec3 brakingVector = glm::normalize(GetRight())*sideVelocity; //create a vector that represents the sideways movement of the player
@@ -198,7 +198,7 @@ void PlayerGameObject::addVelocity(float magnitude, glm::vec3 dir) {
 const glm::vec3 PlayerGameObject::applyVelocity(double delta_time) {
     float speed = delta_time * speedConst;
     float motion_increment = 0.001 * speed;
-    addWheelTraction();// apply sideways wheel friction to velocity vector
+    addWheelTraction(delta_time);// apply sideways wheel friction to velocity vector
     capSpeed();//apply passive braking and enforce player speed limit
 
     const glm::vec3 newPos = position_ + velocity * motion_increment;
@@ -216,7 +216,7 @@ float PlayerGameObject::applyRotation(double delta_time) {
     float finalRotationVal = angle_;
 
     if (glm::length(velocity) > 0.25) {
-        finalRotationVal = GetRotation() + turnRate * delta_time;
+        finalRotationVal = GetRotation() + (turnRate * delta_time);
     }
     
     SetRotation(finalRotationVal);
