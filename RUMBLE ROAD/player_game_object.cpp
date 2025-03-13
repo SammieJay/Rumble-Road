@@ -126,7 +126,7 @@ void PlayerGameObject::handlePlayerControls(double delta_time)
 //=====PLAYER MOVEMENT FUNCTIONS=====
 
 //function to apply tractionary forces to the car, at different speeds the wheels act differently to make a good feeling drift effect
-void PlayerGameObject::addWheelTraction(double delta_time) {
+void PlayerGameObject::addWheelTraction() {
     float sideVelocity = glm::dot(velocity, GetRight());
 
     glm::vec3 brakingVector = glm::normalize(GetRight())*sideVelocity; //create a vector that represents the sideways movement of the player
@@ -137,7 +137,6 @@ void PlayerGameObject::addWheelTraction(double delta_time) {
 
 
     float brakingConst = 0.1f;
-    float delta = 200.0f * delta_time;
 
     
     if ((sideVelocity>0.65*curSpeed || sideVelocity > 4)&&wheelTraction) {
@@ -157,13 +156,8 @@ void PlayerGameObject::addWheelTraction(double delta_time) {
     //Apply the calculated braking scalar to the braking vector
     brakingVector *= brakingConst;
 
-    //cout << brakingConst << endl;
-    
-    //Should be between 0.1 and 0.06 ish
-    cout << brakingConst << endl;
-
     //Apply Braking Force to Velocity Vector
-    velocity -= brakingVector * delta;
+    velocity -= brakingVector;
 
     //DEBUGGING OUTPUTS CAN IGNORE
     /*
@@ -203,8 +197,10 @@ void PlayerGameObject::addVelocity(float magnitude, glm::vec3 dir) {
 //function to calculate and apply the player's velocity vector
 const glm::vec3 PlayerGameObject::applyVelocity(double delta_time) {
     float motion_increment = 0.001 * speedConst * delta_time;
-    addWheelTraction(delta_time);// apply sideways wheel friction to velocity vector
+    addWheelTraction();// apply sideways wheel friction to velocity vector
     capSpeed();//apply passive braking and enforce player speed limit
+
+    cout << glm::length(velocity) << endl;
 
     const glm::vec3 newPos = position_ + velocity * motion_increment;
     SetPosition(newPos);
