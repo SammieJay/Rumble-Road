@@ -76,7 +76,7 @@ void PlayerGameObject::handlePlayerControls(double delta_time)
     // Check for player input and make changes accordingly
     //Moving forward aclerates the fastest, then reversing, then sideways movement
     if (glfwGetKey(windowPtr, GLFW_KEY_W) == GLFW_PRESS) {
-            addVelocity(maxAccel, GetBearing());
+        addVelocity(maxAccel, GetBearing());
     }
 
     if (glfwGetKey(windowPtr, GLFW_KEY_S) == GLFW_PRESS) {
@@ -155,15 +155,15 @@ void PlayerGameObject::addWheelTraction(double delta_time) {
     }
     
     //Apply the calculated braking scalar to the braking vector
-    brakingVector *= brakingConst * delta;
+    brakingVector *= brakingConst;
 
     //cout << brakingConst << endl;
     
     //Should be between 0.1 and 0.06 ish
-    cout << brakingConst * delta<< endl;
+    cout << brakingConst << endl;
 
     //Apply Braking Force to Velocity Vector
-    velocity -= brakingVector;
+    velocity -= brakingVector * delta;
 
     //DEBUGGING OUTPUTS CAN IGNORE
     /*
@@ -202,7 +202,6 @@ void PlayerGameObject::addVelocity(float magnitude, glm::vec3 dir) {
 
 //function to calculate and apply the player's velocity vector
 const glm::vec3 PlayerGameObject::applyVelocity(double delta_time) {
-    float speed = delta_time * speedConst;
     float motion_increment = 0.001 * speedConst * delta_time;
     addWheelTraction(delta_time);// apply sideways wheel friction to velocity vector
     capSpeed();//apply passive braking and enforce player speed limit
