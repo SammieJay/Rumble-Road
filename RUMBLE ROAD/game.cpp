@@ -32,8 +32,10 @@ void Game::Init(void)
         throw(std::runtime_error(std::string("Could not create window")));
     }
 
-    //Allow polling of cursor position
 
+
+
+    //Allow polling of cursor position
     // Make the window's OpenGL context the current one
     glfwMakeContextCurrent(window_);
 
@@ -48,6 +50,10 @@ void Game::Init(void)
     // Set event callbacks
     glfwSetFramebufferSizeCallback(window_, ResizeCallback);
 
+    //Print Version Info
+    const GLubyte* version = glGetString(GL_VERSION);
+    cout << "OpenGL Version: " << version << endl;
+
     // Initialize sprite geometry
     sprite_ = new Sprite();
     sprite_->CreateGeometry();
@@ -59,13 +65,13 @@ void Game::Init(void)
     sprite_shader_.Init((resources_directory_g+std::string("/sprite_vertex_shader.glsl")).c_str(), (resources_directory_g+std::string("/sprite_fragment_shader.glsl")).c_str());
     particle_shader_.Init((resources_directory_g + std::string("/particle_vertex_shader.glsl")).c_str(), (resources_directory_g + std::string("/particle_fragment_shader.glsl")).c_str());
     
-    //Init UI Shaders
-    text_shader_.Init((resources_directory_g + std::string("/sprite_vertex_shader.glsl")).c_str(), (resources_directory_g + std::string("/text_fragment_shader.glsl")).c_str());
-    drawing_shader_.Init((resources_directory_g + std::string("/sprite_vertex_shader.glsl")).c_str(), (resources_directory_g + std::string("/drawing_fragment_shader.glsl")).c_str());
-    
     
     //Initialize Game Object Manager and pass in initialized shader pointers
-    gameObjectManager = new ObjectManager(sprite_, &sprite_shader_, &particle_shader_, &text_shader_, &drawing_shader_, resources_directory_g, window_);
+    gameObjectManager = new ObjectManager(sprite_, &sprite_shader_, &particle_shader_, resources_directory_g, window_);
+
+    //ui setup
+    uiHandler_ = new uiHandler(gameObjectManager, window_, &towerCount);
+
 
     // Initialize time
     current_time_ = 0.0;
@@ -78,6 +84,7 @@ Game::~Game()
     // Only need to delete objects that are not automatically freed
     
     //std::cout << "Game Destruct Called, Program Ending" << std::endl;
+    delete uiHandler_;
     delete sprite_;
     delete gameObjectManager;
 
@@ -93,10 +100,12 @@ void Game::Setup(void)
  
     // Setup the game world
     gameObjectManager->initTextures();
-    gameObjectManager->initUI();
+    //gameObjectManager->initUI();
     gameObjectManager->initObjects();
     gameObjectManager->initParticles();
     
+    //Init UI
+    uiHandler_->initUI();
 
     GameOverTimer = new Timer();
     enemySpawnTimer = new Timer();
@@ -104,7 +113,7 @@ void Game::Setup(void)
 
     gameObjectManager->spawnEnemy(glm::vec3(3, 3, 0), EnemyGameObject::Bomb);
     
-    //spawn in 6 towers at random locations at start of game
+    //spawn in NUM_TOWERS towers at random locations at start of game
     for (int i = 0; i < NUM_TOWERS; i++) {
         glm::vec3 pos = randomGen.randomPoint();
         gameObjectManager->spawnEnemy(pos, EnemyGameObject::Tower);
@@ -165,8 +174,13 @@ void Game::MainLoop(void)
         // Update all the game objects
         Update(delta_time);
 
+        uiHandler_->uiUpdate();
+
         // Render all the game objects
         Render();
+
+        //Render UI elements
+        uiHandler_->RenderUI();
 
         // Push buffer drawn in the background onto the display
         glfwSwapBuffers(window_);
@@ -239,21 +253,14 @@ void Game::Render(void){
     float camera_zoom = 0.06f;
     glm::mat4 camera_zoom_matrix = glm::scale(glm::mat4(1.0f), glm::vec3(camera_zoom, camera_zoom, camera_zoom));
     glm::mat4 view_matrix = window_scale_matrix * camera_zoom_matrix * camera_position_matrix;
-    glm::mat4 screen_matrix = window_scale_matrix * camera_zoom_matrix;
 
     std::vector<ParticleSystem*> particleSystems;
-    
-    //RENDER UI ELEMENTS
-    for (int i = 0; i < gameObjectManager->numUIelements(); i++) {
-        TextGameObject* element = gameObjectManager->GetTextObj(i);
-        if (element->isShowing())element->Render(screen_matrix, current_time_);
-    }
 
 
     //RENDER ALL GAME OBJECTS
 
     // Render all ENEMY game objects
-    int towerCount = 0;
+    towerCount = 0;
     for (int i = 0; i < gameObjectManager->numEnemies(); i++) {
         EnemyGameObject* enemy = gameObjectManager->GetEnemy(i);
         

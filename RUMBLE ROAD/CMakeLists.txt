@@ -26,8 +26,7 @@ set(HDRS
     particle_system.h
     particles.h
     particle_handler.h
-    text_game_object.h
-    drawing_game_object.h
+    ui_handler.h
 )
  
 set(SRCS
@@ -49,8 +48,7 @@ set(SRCS
     particle_system.cpp
     particles.cpp
     particle_handler.cpp
-    text_game_object.cpp
-    drawing_game_object.cpp
+    ui_handler.cpp
     sprite_vertex_shader.glsl
     sprite_fragment_shader.glsl
     particle_vertex_shader.glsl
@@ -59,8 +57,6 @@ set(SRCS
     explosion_particle_fragment_shader.glsl
     rocket_particle_vertex_shader.glsl
     rocket_particle_fragment_shader.glsl
-    text_fragment_shader.glsl
-    drawing_fragment_shader.glsl
 )
 
 # Add path name to configuration file
@@ -94,6 +90,11 @@ endif(NOT WIN32)
 target_link_libraries(${PROJ_NAME} ${GLEW_LIBRARY})
 target_link_libraries(${PROJ_NAME} ${GLFW_LIBRARY})
 target_link_libraries(${PROJ_NAME} ${SOIL_LIBRARY})
+
+# Link ImGui Library
+set(IMGUI_DIR ${LIBRARY_PATH}/include/imgui)
+file(GLOB IMGUI_SRC ${IMGUI_DIR}/*.cpp)
+target_sources(${PROJ_NAME} PRIVATE ${IMGUI_SRC})
 
 # The rules here are specific to Windows Systems
 if(WIN32)

@@ -13,8 +13,7 @@
 #include "sprite.h"
 #include "shader.h"
 #include "particles.h"
-#include "text_game_object.h"
-#include "drawing_game_object.h"
+#include "ui_handler.h"
 
 namespace game {
 
@@ -53,18 +52,15 @@ namespace game {
             // Shader for rendering particles
             Shader particle_shader_;
 
-            // Shader for rendering Text
-            Shader text_shader_;
-
-            //Shader for rendering drawings
-            Shader drawing_shader_;
-
             // References to textures
             // This needs to be a pointer
             GLuint *tex_;
 
             // Object manager to contain & manage all game objects
             ObjectManager* gameObjectManager;
+
+            //UI handler to handle GUI rendering
+            uiHandler* uiHandler_;
 
             RandomGenerator randomGen;
 
@@ -83,6 +79,8 @@ namespace game {
             Timer* GameOverTimer;
             Timer* enemySpawnTimer;
             Timer* itemSpawnTimer;
+
+            int towerCount;
 
 
     }; // class Game

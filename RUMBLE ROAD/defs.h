@@ -14,12 +14,20 @@
 #include <cmath>
 #include <thread>
 
+//imGUI inclusions
+#include "imgui/imgui.h"
+#include "imgui/imgui_impl_opengl3.h"
+#include "imgui/imgui_impl_glfw.h"
+
+
 //Definitions for game stats
 #define ROCKET_DMG 3
+#define MAX_ROCKETS 3
 #define BULLET_DMG 0.75
+#define MAX_BULLETS 16
 #define HEALTH_ITEM_VALUE 3
 #define INFINITE_AMMO_DURRATION 6
-#define PLAYER_MAX_HEALTH 999999
+#define PLAYER_MAX_HEALTH 20
 #define COLLISION_DMG 3
 
 //Enemy Stat Definitions

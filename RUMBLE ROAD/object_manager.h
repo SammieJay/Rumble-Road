@@ -20,10 +20,6 @@
 #include "particle_system.h"
 #include "particle_handler.h"
 
-//UI Includes
-#include "text_game_object.h"
-#include "drawing_game_object.h"
-
 namespace game {
 
     /*
@@ -37,7 +33,7 @@ namespace game {
     public:
         //The constructor gets passed pointers to important information that's required for making new objects
         //so that the manager can create new objects without getting passed redundant variables
-        ObjectManager(Geometry* sprite, Shader* spriteShader, Shader* particleShader, Shader* textShader, Shader* drawingShader, string resourceDir, GLFWwindow* window_);
+        ObjectManager(Geometry* sprite, Shader* spriteShader, Shader* particleShader, string resourceDir, GLFWwindow* window_);
         ~ObjectManager();
 
         //Update function for operations that need to happen every update
@@ -47,7 +43,6 @@ namespace game {
         void initTextures(void);
         void initObjects(void);
         void initParticles(void);
-        void initUI(void);
 
         //Fetch functions for the various kinds of GameObject
         PlayerGameObject* Player(void) { return player; }
@@ -61,8 +56,6 @@ namespace game {
         
         std::vector<StaticGameObject*> StaticObjects(void) const { return staticObjArr; }
         StaticGameObject* GetStaticObject(int i)const;//return specific static object at indx i
-
-        TextGameObject* GetTextObj(int i)const;//return UI element at given index
 
         //Add functions for the obj arrays
         void addEnemy(EnemyGameObject* enemy) { enemyArr.push_back(enemy); }
@@ -78,7 +71,6 @@ namespace game {
         int numEnemies(void) const { return enemyArr.size(); }
         int numItems(void) const { return itemArr.size(); }
         int numStaticObj(void) const { return staticObjArr.size(); }
-        int numUIelements(void) const { return textObjArr.size(); }
 
         //Dammage Distribution Functions
         void damageAOE(glm::vec3 origin, float radius, float dammageAtOrigin, GameObject::objType targets);
@@ -88,7 +80,6 @@ namespace game {
         std::vector<EnemyGameObject*> enemyArr;
         std::vector<CollectibleGameObject*> itemArr;
         std::vector<StaticGameObject*> staticObjArr;
-        std::vector<TextGameObject*> textObjArr;
         PlayerGameObject* player;
         StaticGameObject* background;
 
@@ -101,10 +92,6 @@ namespace game {
         Geometry* sprite_;
         Shader* spriteShader_;
 
-        //UI shaders
-        Shader* text_shader_;
-        Shader* drawing_shader_;
-
         //Particles
         Geometry* explosionParticles_;
         Shader explosionParticleShader_;
@@ -116,7 +103,6 @@ namespace game {
         TextureHandler* playerTexHandler;
         TextureHandler* enemyTexHandler;
         TextureHandler* backgroundTexHandler;
-        TextureHandler* uiTexHandler;
 
         //Commonly Used Particle Handlers
         ParticleHandler* playerParticleHandler;

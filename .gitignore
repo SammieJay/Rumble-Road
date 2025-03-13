@@ -1,1 +1,7 @@
-RUMBLE ROAD/bin/.vs/
+RUMBLE ROAD/bin/
+RUMBLE ROAD/.vs/
+RUMBLE ROAD/CMakeFiles/
+RUMBLE ROAD/RumbleRoad.dir/
+RUMBLE ROAD/CMakeCache.txt
+RUMBLE ROAD/cmake_install.cmake
+**.vcxproj**
