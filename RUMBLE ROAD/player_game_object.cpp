@@ -60,6 +60,7 @@ PlayerGameObject::~PlayerGameObject() {
         }
         subObjArr.clear();
     }
+
     delete turretFireRateClock;
     delete turretReloadClock;
     delete rocketFireRateClock;
@@ -87,16 +88,18 @@ void PlayerGameObject::handlePlayerControls(double delta_time)
     }
 
     if (glfwGetKey(windowPtr, GLFW_KEY_D) == GLFW_PRESS) {
-        if (turnRate > maxTurnRate*-1) {
+        if (turnRate > maxTurnRate * -1) {
             turnRate -= turnConst;
         }
-    }else if (turnRate < 0) turnRate += turnConst;
+    }
+    else if (turnRate < 0) turnRate += turnConst;
 
     if (glfwGetKey(windowPtr, GLFW_KEY_A) == GLFW_PRESS) {
         if (turnRate < maxTurnRate) {
             turnRate += turnConst;
         }
-    }else if (turnRate > 0) turnRate -= turnConst;
+    }
+    else if (turnRate > 0) turnRate -= turnConst;
 
     if (glfwGetKey(windowPtr, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
         glfwSetWindowShouldClose(windowPtr, true);
@@ -125,18 +128,51 @@ void PlayerGameObject::handlePlayerControls(double delta_time)
 
 //=====PLAYER MOVEMENT FUNCTIONS=====
 
+//Function to apply rotation to the player object
+float PlayerGameObject::applyRotation(double delta_time) {
+
+    //float bearingVelocity = glm::abs(glm::dot(GetBearing(), velocity)); //the speed that the player is moving along the bearing vector (forwards or back)
+
+    if (turnRate < 0.005 && turnRate > -0.005) turnRate = 0;
+
+    float finalRotationVal = angle_; //default to current roation in case player is not moving and therefore cannot turn
+
+    //cout << turnRate << endl;
+
+    if (glm::length(velocity) > 0.25) {
+        finalRotationVal = GetRotation() + (turnRate * delta_time);
+    }
+
+    SetRotation(finalRotationVal);
+    return finalRotationVal;
+}
+
+//function to calculate and apply the player's velocity vector each frame
+const glm::vec3 PlayerGameObject::applyVelocity(double delta_time) {
+    addWheelTraction();// apply sideways wheel friction to velocity vector
+    capSpeed();//apply passive braking and enforce player speed limit
+
+    cout << glm::length(velocity)*delta_time << endl;
+
+    const glm::vec3 newPos = position_ + (velocity * float(delta_time));
+    SetPosition(newPos);
+    return (newPos);
+}
+
 //function to apply tractionary forces to the car, at different speeds the wheels act differently to make a good feeling drift effect
 void PlayerGameObject::addWheelTraction() {
-    float sideVelocity = glm::dot(velocity, GetRight());
+    
+    float sideVelocity = glm::dot(velocity, GetRight());//the magnitude of velocity along the side vector
 
     glm::vec3 brakingVector = glm::normalize(GetRight())*sideVelocity; //create a vector that represents the sideways movement of the player
+    
     float curSpeed = glm::length(velocity);
     
     //after direction calculations, we want the absolute value of the players sideways velocity. It will make the rest of our calculations much easier
     sideVelocity = abs(sideVelocity); 
 
 
-    float brakingConst = 0.1f;
+    float brakingConst = 0.0f;
 
     
     if ((sideVelocity>0.65*curSpeed || sideVelocity > 4)&&wheelTraction) {
@@ -146,10 +182,10 @@ void PlayerGameObject::addWheelTraction() {
         wheelTraction = true;
     }
 
-    if (curSpeed > 0 && wheelTraction) {
+    if (curSpeed > 0 && wheelTraction) {//if speed is positive, and wheels have traction -> set breaking constant via this equation
         brakingConst = 0.08 / (1 + (std::exp(0.6*curSpeed + std::exp(2.0) - 11)));
     }
-    else if (curSpeed > 0 && !wheelTraction) {
+    else if (curSpeed > 0 && !wheelTraction) {//if speed is positive, and wheels do not have tracktion -> set breaking const via this equation
         brakingConst = 0.072 / (1 + (std::exp(5*curSpeed + std::exp(2.0) - 10)))+0.006;
     }
     
@@ -192,35 +228,6 @@ void PlayerGameObject::capSpeed() {
 void PlayerGameObject::addVelocity(float magnitude, glm::vec3 dir) {
     glm::normalize(dir); // potentially redundant normalization of the direction vector just to be safe
     velocity += (dir * magnitude);
-}
-
-//function to calculate and apply the player's velocity vector each frame
-const glm::vec3 PlayerGameObject::applyVelocity(double delta_time) {
-    addWheelTraction();// apply sideways wheel friction to velocity vector
-    capSpeed();//apply passive braking and enforce player speed limit
-
-    cout << glm::length(velocity) << endl;
-
-    const glm::vec3 newPos = position_ + (velocity * float(delta_time));
-    SetPosition(newPos);
-    return (newPos);
-}
-
-//Function to apply rotation to the player object
-float PlayerGameObject::applyRotation(double delta_time) {
-    
-    float bearingVelocity = glm::abs(glm::dot(GetBearing(), velocity)); //the speed that the player is moving along the bearing vector (forwards or back)
-    
-    if (turnRate < 0.0149 && turnRate > -0.0149) turnRate = 0;
-
-    float finalRotationVal = angle_;
-
-    if (glm::length(velocity) > 0.25) {
-        finalRotationVal = GetRotation() + (turnRate * delta_time);
-    }
-    
-    SetRotation(finalRotationVal);
-    return finalRotationVal;
 }
 
 //=====INITIALIZE SUB OBJECTS AND RELATED VARIABLES======

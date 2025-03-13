@@ -35,7 +35,7 @@ namespace game {
 
             //Player Movement Constants
             const float maxVelocity = 11.5f;
-            const float maxTurnRate = 1.75f; //determines the maximum rate at which the player can rotate in degrees per update
+            const float maxTurnRate = 1.7f; //determines the maximum rate at which the player can rotate in degrees per update
             const float maxAccel = 6.0f; //determines how quickly the player can accelerate
 
             float turnRate;
