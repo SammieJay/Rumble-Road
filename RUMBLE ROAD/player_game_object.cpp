@@ -137,6 +137,7 @@ void PlayerGameObject::addWheelTraction(double delta_time) {
 
 
     float brakingConst = 0.1f;
+    float delta = 200.0f * delta_time;
 
     
     if ((sideVelocity>0.65*curSpeed || sideVelocity > 4)&&wheelTraction) {
@@ -154,7 +155,12 @@ void PlayerGameObject::addWheelTraction(double delta_time) {
     }
     
     //Apply the calculated braking scalar to the braking vector
-    brakingVector *= brakingConst;
+    brakingVector *= brakingConst * delta;
+
+    //cout << brakingConst << endl;
+    
+    //Should be between 0.1 and 0.06 ish
+    cout << brakingConst * delta<< endl;
 
     //Apply Braking Force to Velocity Vector
     velocity -= brakingVector;
@@ -197,7 +203,7 @@ void PlayerGameObject::addVelocity(float magnitude, glm::vec3 dir) {
 //function to calculate and apply the player's velocity vector
 const glm::vec3 PlayerGameObject::applyVelocity(double delta_time) {
     float speed = delta_time * speedConst;
-    float motion_increment = 0.001 * speed;
+    float motion_increment = 0.001 * speedConst * delta_time;
     addWheelTraction(delta_time);// apply sideways wheel friction to velocity vector
     capSpeed();//apply passive braking and enforce player speed limit
 
