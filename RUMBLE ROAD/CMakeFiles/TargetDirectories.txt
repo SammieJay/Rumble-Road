@@ -1,2 +1,0 @@
-C:/Users/Samuel/Desktop/Game Dev Projects/Rumble-Road/RUMBLE ROAD/CMakeFiles/RumbleRoad.dir
-C:/Users/Samuel/Desktop/Game Dev Projects/Rumble-Road/RUMBLE ROAD/CMakeFiles/ALL_BUILD.dir
