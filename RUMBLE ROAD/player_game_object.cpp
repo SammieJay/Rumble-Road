@@ -73,27 +73,30 @@ PlayerGameObject::~PlayerGameObject() {
 
 void PlayerGameObject::handlePlayerControls(double delta_time)
 {
+
+    float turnConst = 4.0f * delta_time;
+
     // Check for player input and make changes accordingly
     //Moving forward aclerates the fastest, then reversing, then sideways movement
     if (glfwGetKey(windowPtr, GLFW_KEY_W) == GLFW_PRESS) {
-        addVelocity(maxAccel, GetBearing());
+        addVelocity(maxAccel * delta_time, GetBearing()); // add velocity in direction of bearing
     }
 
     if (glfwGetKey(windowPtr, GLFW_KEY_S) == GLFW_PRESS) {
-        addVelocity(maxAccel/1.25, GetBearing() * -1.0f);
+        addVelocity((maxAccel/1.25) * delta_time, GetBearing() * -1.0f);//Add velocity in opposite direction of bearing
     }
 
     if (glfwGetKey(windowPtr, GLFW_KEY_D) == GLFW_PRESS) {
         if (turnRate > maxTurnRate*-1) {
-            turnRate -= 0.02f;
+            turnRate -= turnConst;
         }
-    }else if (turnRate < 0) turnRate += 0.02f;
+    }else if (turnRate < 0) turnRate += turnConst;
 
     if (glfwGetKey(windowPtr, GLFW_KEY_A) == GLFW_PRESS) {
         if (turnRate < maxTurnRate) {
-            turnRate += 0.02f;
+            turnRate += turnConst;
         }
-    }else if (turnRate > 0) turnRate -= 0.02f;
+    }else if (turnRate > 0) turnRate -= turnConst;
 
     if (glfwGetKey(windowPtr, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
         glfwSetWindowShouldClose(windowPtr, true);
@@ -120,9 +123,6 @@ void PlayerGameObject::handlePlayerControls(double delta_time)
 }
 
 
-
-
-
 //=====PLAYER MOVEMENT FUNCTIONS=====
 
 //function to apply tractionary forces to the car, at different speeds the wheels act differently to make a good feeling drift effect
@@ -133,7 +133,7 @@ void PlayerGameObject::addWheelTraction() {
     float curSpeed = glm::length(velocity);
     
     //after direction calculations, we want the absolute value of the players sideways velocity. It will make the rest of our calculations much easier
-    sideVelocity = abs(sideVelocity);   
+    sideVelocity = abs(sideVelocity); 
 
 
     float brakingConst = 0.1f;
@@ -194,15 +194,14 @@ void PlayerGameObject::addVelocity(float magnitude, glm::vec3 dir) {
     velocity += (dir * magnitude);
 }
 
-//function to calculate and apply the player's velocity vector
+//function to calculate and apply the player's velocity vector each frame
 const glm::vec3 PlayerGameObject::applyVelocity(double delta_time) {
-    float motion_increment = 0.001 * speedConst * delta_time;
     addWheelTraction();// apply sideways wheel friction to velocity vector
     capSpeed();//apply passive braking and enforce player speed limit
 
     cout << glm::length(velocity) << endl;
 
-    const glm::vec3 newPos = position_ + velocity * motion_increment;
+    const glm::vec3 newPos = position_ + (velocity * float(delta_time));
     SetPosition(newPos);
     return (newPos);
 }

@@ -34,10 +34,9 @@ namespace game {
             const string ResourceDir = RESOURCES_DIRECTORY;//So the player object can acess texture assets
 
             //Player Movement Constants
-            const float speedConst = 1000;
             const float maxVelocity = 11.5f;
-            const float maxTurnRate = 2.0f; //determines the maximum rate at which the player can rotate in degrees per update
-            const float maxAccel = maxVelocity/500; //Set at initialization and is based on max velocity
+            const float maxTurnRate = 1.75f; //determines the maximum rate at which the player can rotate in degrees per update
+            const float maxAccel = 6.0f; //determines how quickly the player can accelerate
 
             float turnRate;
 
