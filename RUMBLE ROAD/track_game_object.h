@@ -20,7 +20,10 @@ namespace game {
         void Update(double delta_time) override;
 
     protected:
+        const float lifespan = 6.0f; //how many seconds each track object stays alive
+        
         string ResourceDir;
+        Timer* lifeClock;
 
     }; // class CollectibleGameObject
 

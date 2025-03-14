@@ -24,7 +24,7 @@ namespace game {
 
         public:
             // Enum used for denoting the purpose of an object
-            enum objType { Player, Enemy, Item, World, Background, Projectile, SubObject , ParticleSys, UI};
+            enum objType { Player, Enemy, Item, World, Background, Projectile, SubObject , ParticleSys, UI, Track};
                 //Player:       is the player object
                 //Enemy:        is an enemy object
                 //Item:         is something that the player can pick up off the ground

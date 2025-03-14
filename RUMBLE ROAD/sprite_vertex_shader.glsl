@@ -28,5 +28,4 @@ void main()
 
     // Pass attributes to fragment shader
     color_interp = vec4(color, 1.0);
-
 }
