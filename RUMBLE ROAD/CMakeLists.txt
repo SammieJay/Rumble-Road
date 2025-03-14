@@ -27,6 +27,7 @@ set(HDRS
     particles.h
     particle_handler.h
     ui_handler.h
+    track_game_object.h
 )
  
 set(SRCS
@@ -49,6 +50,7 @@ set(SRCS
     particles.cpp
     particle_handler.cpp
     ui_handler.cpp
+    track_game_object.cpp
     sprite_vertex_shader.glsl
     sprite_fragment_shader.glsl
     particle_vertex_shader.glsl
