@@ -30,7 +30,7 @@ namespace game {
             bool turretReloading() { return turretReloadClock->isRunning(); }
             bool Drifting() { return !wheelTraction; } //returns whether player is currently in state of drift
 
-            inline std::vector<TrackObject*> GetTrackObjArr(void) { return trackObjArr; } // retrn array of track objects
+            inline std::list<TrackObject*> GetTrackObjArr(void) { return trackObjArr; } // retrn array of track objects
             inline bool hasTracks(void) { return !trackObjArr.empty(); }
 
         private:
@@ -67,10 +67,12 @@ namespace game {
             void initSubObjects();
 
             //Track Placing Code
-            void placeTrackObj(glm::vec3 pos);//function to place track object in world at location
-            std::vector<TrackObject*> trackObjArr; //vector to store references to all track objects
+            void placeTrackObj(glm::vec3 pos, double delta_time);//function to place track object in world at location
+            std::list<TrackObject*> trackObjArr; //double linked list to store references to all track objects
             Timer* trackDelay; //timer to time the delay between track object placements
-            const float trackDelayTime = 0.01f;//constant for how long in between track placements
+
+            //Position returns for track placement
+            glm::vec3 getWheelPos(int end, int side);//return the position of the wheel depending on given inputs
             
             //Turret Related *note all turret related values are initialized in initSubObjects() function
             StaticGameObject* turret;//Turret object on car

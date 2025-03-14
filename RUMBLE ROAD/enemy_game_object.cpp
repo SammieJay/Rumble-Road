@@ -95,7 +95,7 @@ namespace game {
 	//===== TOWER ENEMY FUNCTIONS =====
 	void EnemyGameObject::shootRocket() {
 		//If shooting cooldown timer is not currently running, run this code
-		if (rocketCooldownTimer->isFinished() || !rocketCooldownTimer->isRunning()) {
+		if ((rocketCooldownTimer->isFinished() || !rocketCooldownTimer->isRunning()) && isShowing()) {
 			ProjectileGameObject* rocket = new ProjectileGameObject(geometry_, shader_, rocketTex, 0.6, 10, glm::vec2(1.0,0.5), turret, ProjectileGameObject::Rocket);
 
 			//Copy particle handler and add to rocket

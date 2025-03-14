@@ -60,6 +60,13 @@ PlayerGameObject::~PlayerGameObject() {
         subObjArr.clear();
     }
 
+    if (!trackObjArr.empty()) {
+        for (TrackObject* track : trackObjArr) {
+            delete track;
+        }
+        trackObjArr.clear();
+    }
+
     delete turretFireRateClock;
     delete turretReloadClock;
     delete rocketFireRateClock;
@@ -82,7 +89,13 @@ void PlayerGameObject::handlePlayerControls(double delta_time)
         addVelocity(maxAccel * delta_time, GetBearing()); // add velocity in direction of bearing
 
         //if moving forwards and currently drifting, make tracks
-        if (!wheelTraction && (trackDelay->isFinished() || !trackDelay->hasBeenRun())) placeTrackObj(position_);
+        if (!wheelTraction && (trackDelay->isFinished() || !trackDelay->hasBeenRun())) {
+            //placeTrackObj(getWheelPos(1, 1), delta_time); //place track front right
+            //placeTrackObj(getWheelPos(1, -1), delta_time); //place track front left
+            placeTrackObj(getWheelPos(-1, 1), delta_time); //place track back right
+            placeTrackObj(getWheelPos(-1, -1), delta_time); //place track back left
+        }
+            
     }
 
     if (glfwGetKey(windowPtr, GLFW_KEY_S) == GLFW_PRESS) {
@@ -166,16 +179,14 @@ void PlayerGameObject::addWheelTraction() {
     
     float sideVelocity = glm::dot(velocity, GetRight());//the magnitude of velocity along the side vector
 
-    glm::vec3 brakingVector = glm::normalize(GetRight())*sideVelocity; //create a vector that represents the sideways movement of the player
+    glm::vec3 brakingVector = GetRight()*sideVelocity; //create a vector that represents the sideways movement of the player
     
     float curSpeed = glm::length(velocity);
     
     //after direction calculations, we want the absolute value of the players sideways velocity. It will make the rest of our calculations much easier
     sideVelocity = abs(sideVelocity); 
 
-
     float brakingConst = 0.0f;
-
     
     if ((sideVelocity>0.65*curSpeed || sideVelocity > 4)&&wheelTraction) {
         wheelTraction = false;
@@ -327,12 +338,44 @@ void PlayerGameObject::activateItem(int type) {
 }
 
 // TRACK PLACING FUNCITONS
-void PlayerGameObject::placeTrackObj(glm::vec3 pos) {
-    TrackObject* track = new TrackObject(pos, geometry_, shader_); //create new track object
+//place track at given position
+void PlayerGameObject::placeTrackObj(glm::vec3 pos, double delta_time) {
+    float angle = std::atan2(velocity.y, velocity.x); //angle track object based on velocity direction
+
+    TrackObject* track = new TrackObject(pos, angle, geometry_, shader_); //create new track object at given position with the same rotation as the car
     trackObjArr.push_back(track); //add new track object to array
-    trackDelay->Start(trackDelayTime);
+    
+    float currentSpeed = glm::length(velocity) * float(delta_time);//magnitude of velocity vector adjusted to delta time
+    float defaultDelay = 0.0325f;//maximum possible time for delay between track placements
+    const float minDelay = 0.006f;
+    
+    float adjustedTrackDelay = defaultDelay - (0.35f * currentSpeed); //scale down delay time as speed increases to offset sepperation of track objects
+
+    
+
+    if (adjustedTrackDelay < minDelay) adjustedTrackDelay = minDelay; //set a lower bound to delay time
+    
+    //cout << angle * 180.0f / 3.14159f << endl;
+    cout << adjustedTrackDelay << endl;
+
+    trackDelay->Start(adjustedTrackDelay);
 }
 
+/*
+return wheel position of the car based on given parameters
+side and end should both be either -1, or 1.
+side: L -> -1, R -> +1
+end: Back -> -1, Front -> +1
+*/
+glm::vec3 PlayerGameObject::getWheelPos(int end, int side) {
+    if (!(std::abs(end) == 1 && std::abs(side) == 1)) return position_; // if given integers are not 1 or -1, return car position
+    else {//else return position calculated using input numbers
+        glm::vec3 pos = position_; //start with current car position
+        pos += GetBearing() * (0.7f * end); //walk along the bearing vector forwards or backwards
+        pos += GetRight() * (0.29f * side);
+        return pos;
+    }
+}
 
 //=====PLAYER UPDATE FUNCTION=====
 // Update function for the player object
@@ -365,17 +408,10 @@ void PlayerGameObject::Update(double delta_time) {
         reloadTurret();
     }
 
-    //Check if any track objects need to be cleared and update tracks
-    auto It = trackObjArr.begin();
-    while (It != trackObjArr.end()) {
-        if ((*It)->isToBeCleared()) {
-            delete* It;
-            It = trackObjArr.erase(It);
-        }
-        else {
-            (*It)->Update(delta_time);
-            ++It;
-        }
+    //if number of track objects exceeds maximum, delete the earliest placed track obj
+    if (trackObjArr.size() >= MAX_TRACKS) {
+        delete trackObjArr.front();
+        trackObjArr.pop_front();
     }
     
     // Call the parent's update method to move the object in standard way, if desired

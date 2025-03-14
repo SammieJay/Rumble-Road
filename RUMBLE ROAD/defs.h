@@ -43,6 +43,9 @@
 #define NUM_CARS 10
 #define NUM_BIKE 5
 
+//MISC
+#define MAX_TRACKS 500 //maximum number of track objects to exist at once
+
 
 namespace game { 
 	//I got tired of tagging these things as std::

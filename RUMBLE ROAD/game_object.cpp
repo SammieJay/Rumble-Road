@@ -34,14 +34,14 @@ GameObject::~GameObject() {
 
 glm::vec3 GameObject::GetBearing(void) const {
     glm::vec3 dir(cos(angle_), sin(angle_), 0.0);
-    return dir;
+    return glm::normalize(dir);
 }
 
 
 glm::vec3 GameObject::GetRight(void) const {
     float pi_over_two = glm::pi<float>() / 2.0f;
     glm::vec3 dir(cos(angle_ - pi_over_two), sin(angle_ - pi_over_two), 0.0);
-    return dir;
+    return glm::normalize(dir);
 }
 
 

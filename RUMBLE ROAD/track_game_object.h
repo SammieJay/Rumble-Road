@@ -14,7 +14,7 @@ namespace game {
     class TrackObject : public StaticGameObject {
     public:
         
-        TrackObject(const glm::vec3& position, Geometry* geom, Shader* shader);
+        TrackObject(const glm::vec3& position, float angle, Geometry* geom, Shader* shader);
         ~TrackObject();
         
         void Update(double delta_time) override;

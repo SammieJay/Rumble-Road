@@ -8,8 +8,8 @@ namespace game {
 	*/
 
 	//Constructor passes the propper objType to the GameObject constructor so that the user doesnt need to except for default GameObject declarations
-	TrackObject::TrackObject(const glm::vec3& position, Geometry* geom, Shader* shader) : 
-	StaticGameObject(position, geom, shader, Track, 0, glm::vec2(0.25, 0.25)) {
+	TrackObject::TrackObject(const glm::vec3& position, float angle, Geometry* geom, Shader* shader) : 
+	StaticGameObject(position, geom, shader, Track, angle, glm::vec2(0.4, 0.2)) {
 		ResourceDir = RESOURCES_DIRECTORY;
 		string TexDir = "/textures/orb.png";
 		
@@ -28,7 +28,7 @@ namespace game {
 	}
 
 	void TrackObject::Update(double delta_time) {
-		if (lifeClock->isFinished()) clear = true;
+		//if (lifeClock->isFinished()) clear = true;
 
 		// Call the parent's update method to move the object in standard way, if desired
 		StaticGameObject::Update(delta_time);
