@@ -27,7 +27,7 @@
 #define MAX_BULLETS 16
 #define HEALTH_ITEM_VALUE 3
 #define INFINITE_AMMO_DURRATION 6
-#define PLAYER_MAX_HEALTH 20
+#define PLAYER_MAX_HEALTH 2000
 #define COLLISION_DMG 3
 
 //Enemy Stat Definitions

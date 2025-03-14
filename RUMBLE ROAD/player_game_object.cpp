@@ -90,8 +90,6 @@ void PlayerGameObject::handlePlayerControls(double delta_time)
 
         //if moving forwards and currently drifting, make tracks
         if (!wheelTraction && (trackDelay->isFinished() || !trackDelay->hasBeenRun())) {
-            //placeTrackObj(getWheelPos(1, 1), delta_time); //place track front right
-            //placeTrackObj(getWheelPos(1, -1), delta_time); //place track front left
             placeTrackObj(getWheelPos(-1, 1), delta_time); //place track back right
             placeTrackObj(getWheelPos(-1, -1), delta_time); //place track back left
         }
@@ -164,10 +162,10 @@ float PlayerGameObject::applyRotation(double delta_time) {
 
 //function to calculate and apply the player's velocity vector each frame
 const glm::vec3 PlayerGameObject::applyVelocity(double delta_time) {
-    addWheelTraction();// apply sideways wheel friction to velocity vector
-    capSpeed();//apply passive braking and enforce player speed limit
+    addWheelTraction(delta_time);// apply sideways wheel friction to velocity vector
+    capSpeed(delta_time);//apply passive braking and enforce player speed limit
 
-    //cout << glm::length(velocity)*delta_time << endl;
+    cout << glm::length(velocity)*delta_time << endl;
 
     const glm::vec3 newPos = position_ + (velocity * float(delta_time));
     SetPosition(newPos);
@@ -175,23 +173,23 @@ const glm::vec3 PlayerGameObject::applyVelocity(double delta_time) {
 }
 
 //function to apply tractionary forces to the car, at different speeds the wheels act differently to make a good feeling drift effect
-void PlayerGameObject::addWheelTraction() {
+void PlayerGameObject::addWheelTraction(double delta_time) {
     
-    float sideVelocity = glm::dot(velocity, GetRight());//the magnitude of velocity along the side vector
+    float sideVelocity = glm::dot(velocity, GetRight()) * delta_time;//the magnitude of velocity along the side vector
 
     glm::vec3 brakingVector = GetRight()*sideVelocity; //create a vector that represents the sideways movement of the player
     
-    float curSpeed = glm::length(velocity);
+    float curSpeed = glm::length(velocity) * delta_time;
     
     //after direction calculations, we want the absolute value of the players sideways velocity. It will make the rest of our calculations much easier
     sideVelocity = abs(sideVelocity); 
 
     float brakingConst = 0.0f;
     
-    if ((sideVelocity>0.65*curSpeed || sideVelocity > 4)&&wheelTraction) {
+    if ((sideVelocity > 0.65*curSpeed || sideVelocity > 4 * delta_time )&&wheelTraction) {
         wheelTraction = false;
     }
-    if ((curSpeed < 0.2 || sideVelocity < 0.02*curSpeed || sideVelocity < 2)&&!wheelTraction) {
+    if ((curSpeed < 0.2 * delta_time || sideVelocity < 0.02*curSpeed || sideVelocity < 2 * delta_time)&&!wheelTraction) {
         wheelTraction = true;
     }
 
@@ -203,7 +201,9 @@ void PlayerGameObject::addWheelTraction() {
     }
     
     //Apply the calculated braking scalar to the braking vector
-    brakingVector *= brakingConst;
+    brakingVector *= (brakingConst * 25.0f);
+
+    //cout << glm::length(brakingVector) << endl;
 
     //Apply Braking Force to Velocity Vector
     velocity -= brakingVector;
@@ -218,7 +218,7 @@ void PlayerGameObject::addWheelTraction() {
     */
 }
 
-void PlayerGameObject::capSpeed() {
+void PlayerGameObject::capSpeed(double delta_time) {
     float curSpeed = glm::length(velocity);
     float bearingVelocity = glm::dot(GetBearing(), velocity);
     
@@ -234,7 +234,7 @@ void PlayerGameObject::capSpeed() {
 
     //if player's forward speed is less than 20% of max velocity and more than 0, apply a slight passive braking effect along the bearing vector
     if (bearingVelocity < 0.2 * maxVelocity && bearingVelocity > 0) {
-        velocity -= GetBearing()*0.003f;
+        velocity -= GetBearing() * float(delta_time);
     }
 }
 
@@ -356,7 +356,7 @@ void PlayerGameObject::placeTrackObj(glm::vec3 pos, double delta_time) {
     if (adjustedTrackDelay < minDelay) adjustedTrackDelay = minDelay; //set a lower bound to delay time
     
     //cout << angle * 180.0f / 3.14159f << endl;
-    cout << adjustedTrackDelay << endl;
+    //cout << adjustedTrackDelay << endl;
 
     trackDelay->Start(adjustedTrackDelay);
 }
