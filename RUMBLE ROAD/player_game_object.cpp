@@ -186,7 +186,7 @@ void PlayerGameObject::addWheelTraction(double delta_time) {
 
     float brakingConst = 0.0f;
     
-    if ((sideVelocity > 0.65*curSpeed || sideVelocity > 4 * delta_time )&&wheelTraction) {
+    if ((sideVelocity > 0.65f * curSpeed || sideVelocity > 4.0f * delta_time ) && wheelTraction) {
         wheelTraction = false;
     }
     if ((curSpeed < 0.2 * delta_time || sideVelocity < 0.02*curSpeed || sideVelocity < 2 * delta_time)&&!wheelTraction) {
@@ -201,7 +201,7 @@ void PlayerGameObject::addWheelTraction(double delta_time) {
     }
     
     //Apply the calculated braking scalar to the braking vector
-    brakingVector *= (brakingConst * 27.5f);
+    brakingVector *= (brakingConst * 26.0f);
 
     //Apply Braking Force to Velocity Vector
     velocity -= brakingVector;
