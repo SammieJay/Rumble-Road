@@ -24,8 +24,6 @@ DynamicGameObject(position, geom, shader, Player, PLAYER_MAX_HEALTH)
     wheelTraction = true;
 
     turnRate = 0;//player turning variable *used to smooth out player turning
-   
-    isDrifting = false;
 
     //Projectile Related
     rocketTexture = new TextureHandler(ResourceDir + "/textures/rocket.png");
@@ -44,6 +42,7 @@ DynamicGameObject(position, geom, shader, Player, PLAYER_MAX_HEALTH)
     turretFireRateClock = new Timer("Turret Cooldown");
     turretReloadClock = new Timer("Turret Reload");
     infiniteAmmoTimer = new Timer("Infinite Ammo");
+    trackDelay = new Timer("Track Delay");
 
 
     //Misc
@@ -81,6 +80,9 @@ void PlayerGameObject::handlePlayerControls(double delta_time)
     //Moving forward aclerates the fastest, then reversing, then sideways movement
     if (glfwGetKey(windowPtr, GLFW_KEY_W) == GLFW_PRESS) {
         addVelocity(maxAccel * delta_time, GetBearing()); // add velocity in direction of bearing
+
+        //if moving forwards and currently drifting, make tracks
+        if (!wheelTraction && (trackDelay->isFinished() || !trackDelay->hasBeenRun())) placeTrackObj(position_);
     }
 
     if (glfwGetKey(windowPtr, GLFW_KEY_S) == GLFW_PRESS) {
@@ -152,7 +154,7 @@ const glm::vec3 PlayerGameObject::applyVelocity(double delta_time) {
     addWheelTraction();// apply sideways wheel friction to velocity vector
     capSpeed();//apply passive braking and enforce player speed limit
 
-    cout << glm::length(velocity)*delta_time << endl;
+    //cout << glm::length(velocity)*delta_time << endl;
 
     const glm::vec3 newPos = position_ + (velocity * float(delta_time));
     SetPosition(newPos);
@@ -324,6 +326,13 @@ void PlayerGameObject::activateItem(int type) {
     }
 }
 
+// TRACK PLACING FUNCITONS
+void PlayerGameObject::placeTrackObj(glm::vec3 pos) {
+    TrackObject* track = new TrackObject(pos, geometry_, shader_); //create new track object
+    trackObjArr.push_back(track); //add new track object to array
+    trackDelay->Start(trackDelayTime);
+}
+
 
 //=====PLAYER UPDATE FUNCTION=====
 // Update function for the player object
@@ -354,6 +363,19 @@ void PlayerGameObject::Update(double delta_time) {
     //Check reloading timer
     if (turretReloadClock->isFinished() && turretMag == 0) {
         reloadTurret();
+    }
+
+    //Check if any track objects need to be cleared and update tracks
+    auto It = trackObjArr.begin();
+    while (It != trackObjArr.end()) {
+        if ((*It)->isToBeCleared()) {
+            delete* It;
+            It = trackObjArr.erase(It);
+        }
+        else {
+            (*It)->Update(delta_time);
+            ++It;
+        }
     }
     
     // Call the parent's update method to move the object in standard way, if desired

@@ -3,6 +3,7 @@
 
 #include "dynamic_game_object.h"
 #include "static_game_object.h"
+#include "track_game_object.h"
 
 namespace game {
 
@@ -29,6 +30,9 @@ namespace game {
             bool turretReloading() { return turretReloadClock->isRunning(); }
             bool Drifting() { return !wheelTraction; } //returns whether player is currently in state of drift
 
+            inline std::vector<TrackObject*> GetTrackObjArr(void) { return trackObjArr; } // retrn array of track objects
+            inline bool hasTracks(void) { return !trackObjArr.empty(); }
+
         private:
             GLFWwindow* windowPtr;//Player keeps a pointer to the game's window so that the player obj can acess keypress updates
             const string ResourceDir = RESOURCES_DIRECTORY;//So the player object can acess texture assets
@@ -42,7 +46,6 @@ namespace game {
 
             glm::vec3 velocity;    //Player's total velocity vector
             bool wheelTraction;    //boolean determines whether the wheels are currently in a state of high traction or low traction
-            bool isDrifting;       //whether the player is currently drifting
             
 
             //Player Movement Functions
@@ -62,6 +65,12 @@ namespace game {
 
             //Sub Objects
             void initSubObjects();
+
+            //Track Placing Code
+            void placeTrackObj(glm::vec3 pos);//function to place track object in world at location
+            std::vector<TrackObject*> trackObjArr; //vector to store references to all track objects
+            Timer* trackDelay; //timer to time the delay between track object placements
+            const float trackDelayTime = 0.01f;//constant for how long in between track placements
             
             //Turret Related *note all turret related values are initialized in initSubObjects() function
             StaticGameObject* turret;//Turret object on car

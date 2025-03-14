@@ -10,9 +10,6 @@ namespace game {
 		deathTimer = new Timer("Death");
 		health = float(hp);
 		Alive = true;
-
-		
-		
 	}
 
 	DynamicGameObject::~DynamicGameObject() {
@@ -87,7 +84,7 @@ namespace game {
 	}
 
 	void DynamicGameObject::Update(double delta_time) {
-		//If death timer has reached 0, clear this entity
+		//If death timer has reached 0 and this is not the player, clear this entity
 		if (deathTimer->isFinished() && typeID != Player) {
 			clearObject();
 		}

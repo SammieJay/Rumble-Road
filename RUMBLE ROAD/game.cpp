@@ -364,7 +364,16 @@ void Game::Render(void){
         }
         if(bullet->isShowing())bullet->Render(view_matrix, current_time_);
     }
+    
+    //Render player
     if(player->isShowing()) player->Render(view_matrix, current_time_);
+
+    //Render player projectiles after player to layer them underneath
+    if (player->hasTracks()) {//if player has track objects placed, render them
+        for (TrackObject* track : player->GetTrackObjArr()) {
+            if (track->isShowing()) track->Render(view_matrix, current_time_);
+        }
+    }
     
     gameObjectManager->Background()->Render(view_matrix, current_time_);
     
