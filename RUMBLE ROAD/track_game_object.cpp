@@ -17,18 +17,12 @@ namespace game {
 
 		texture_ = textureHandler->getMainTex();
 		texHandler = textureHandler;
-
-		lifeClock = new Timer();
-		lifeClock->Start(lifespan);
 		
 	}
 
-	TrackObject::~TrackObject() {
-		delete lifeClock;
-	}
+	TrackObject::~TrackObject() {}
 
 	void TrackObject::Update(double delta_time) {
-		//if (lifeClock->isFinished()) clear = true;
 
 		// Call the parent's update method to move the object in standard way, if desired
 		StaticGameObject::Update(delta_time);

@@ -81,7 +81,7 @@ PlayerGameObject::~PlayerGameObject() {
 void PlayerGameObject::handlePlayerControls(double delta_time)
 {
 
-    float turnConst = 4.0f * delta_time;
+    
 
     // Check for player input and make changes accordingly
     //Moving forward aclerates the fastest, then reversing, then sideways movement
@@ -99,6 +99,9 @@ void PlayerGameObject::handlePlayerControls(double delta_time)
     if (glfwGetKey(windowPtr, GLFW_KEY_S) == GLFW_PRESS) {
         addVelocity((maxAccel/1.25) * delta_time, GetBearing() * -1.0f);//Add velocity in opposite direction of bearing
     }
+    
+
+    float turnConst = 4.0f * delta_time;
 
     if (glfwGetKey(windowPtr, GLFW_KEY_D) == GLFW_PRESS) {
         if (turnRate > maxTurnRate * -1) {
@@ -113,6 +116,7 @@ void PlayerGameObject::handlePlayerControls(double delta_time)
         }
     }
     else if (turnRate > 0) turnRate -= turnConst;
+
 
     if (glfwGetKey(windowPtr, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
         glfwSetWindowShouldClose(windowPtr, true);
@@ -150,8 +154,6 @@ float PlayerGameObject::applyRotation(double delta_time) {
 
     float finalRotationVal = angle_; //default to current roation in case player is not moving and therefore cannot turn
 
-    //cout << turnRate << endl;
-
     if (glm::length(velocity) > 0.25) {
         finalRotationVal = GetRotation() + (turnRate * delta_time);
     }
@@ -164,8 +166,6 @@ float PlayerGameObject::applyRotation(double delta_time) {
 const glm::vec3 PlayerGameObject::applyVelocity(double delta_time) {
     addWheelTraction(delta_time);// apply sideways wheel friction to velocity vector
     capSpeed(delta_time);//apply passive braking and enforce player speed limit
-
-    cout << glm::length(velocity)*delta_time << endl;
 
     const glm::vec3 newPos = position_ + (velocity * float(delta_time));
     SetPosition(newPos);
@@ -201,21 +201,10 @@ void PlayerGameObject::addWheelTraction(double delta_time) {
     }
     
     //Apply the calculated braking scalar to the braking vector
-    brakingVector *= (brakingConst * 25.0f);
-
-    //cout << glm::length(brakingVector) << endl;
+    brakingVector *= (brakingConst * 27.5f);
 
     //Apply Braking Force to Velocity Vector
     velocity -= brakingVector;
-
-    //DEBUGGING OUTPUTS CAN IGNORE
-    /*
-    if (wheelTraction) { cout << "Wheel Traction!"; }
-    else { cout << "No Wheel Traction!"; }
-    cout << "Speed: " << curSpeed << "  ";
-    cout << "Turn Rate: " << turnRate<<"  ";
-    cout<<"Side Velocity: "<< sideVelocity << endl;
-    */
 }
 
 void PlayerGameObject::capSpeed(double delta_time) {
@@ -350,15 +339,8 @@ void PlayerGameObject::placeTrackObj(glm::vec3 pos, double delta_time) {
     const float minDelay = 0.006f;
     
     float adjustedTrackDelay = defaultDelay - (0.35f * currentSpeed); //scale down delay time as speed increases to offset sepperation of track objects
-
-    
-
     if (adjustedTrackDelay < minDelay) adjustedTrackDelay = minDelay; //set a lower bound to delay time
-    
-    //cout << angle * 180.0f / 3.14159f << endl;
-    //cout << adjustedTrackDelay << endl;
-
-    trackDelay->Start(adjustedTrackDelay);
+    trackDelay->Start(adjustedTrackDelay); //start timer until next track object can be placed
 }
 
 /*

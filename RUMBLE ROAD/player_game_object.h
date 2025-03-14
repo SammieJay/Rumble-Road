@@ -39,10 +39,10 @@ namespace game {
 
             //Player Movement Constants
             const float maxVelocity = 11.5f;
-            const float maxTurnRate = 1.7f; //determines the maximum rate at which the player can rotate in degrees per update
-            const float maxAccel = 8.0f; //determines how quickly the player can accelerate
+            const float maxTurnRate = 1.8f; //determines the maximum rate at which the player can rotate in degrees per update
+            const float maxAccel = 9.0f; //determines how quickly the player can accelerate
 
-            float turnRate;
+            float turnRate; //the current turning force exerted on the player via player controls
 
             glm::vec3 velocity;    //Player's total velocity vector
             bool wheelTraction;    //boolean determines whether the wheels are currently in a state of high traction or low traction
