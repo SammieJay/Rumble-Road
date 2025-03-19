@@ -71,6 +71,9 @@ namespace game {
             std::list<TrackObject*> trackObjArr; //double linked list to store references to all track objects
             Timer* trackDelay; //timer to time the delay between track object placements
 
+            //Track shader
+            Shader track_shader;
+
             //Position returns for track placement
             glm::vec3 getWheelPos(int end, int side);//return the position of the wheel depending on given inputs
             

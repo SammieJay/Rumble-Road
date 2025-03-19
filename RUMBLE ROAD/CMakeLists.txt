@@ -59,6 +59,7 @@ set(SRCS
     explosion_particle_fragment_shader.glsl
     rocket_particle_vertex_shader.glsl
     rocket_particle_fragment_shader.glsl
+    track_fragment_shader.glsl
 )
 
 # Add path name to configuration file

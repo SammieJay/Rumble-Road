@@ -48,6 +48,8 @@ DynamicGameObject(position, geom, shader, Player, PLAYER_MAX_HEALTH)
     //Misc
     scale_ = glm::vec2(1.8, 1.0); //scale of the player
 
+    track_shader.Init((ResourceDir + std::string("/sprite_vertex_shader.glsl")).c_str(), (ResourceDir + std::string("/track_fragment_shader.glsl")).c_str());
+
 
     initSubObjects();
 }
@@ -331,7 +333,7 @@ void PlayerGameObject::activateItem(int type) {
 void PlayerGameObject::placeTrackObj(glm::vec3 pos, double delta_time) {
     float angle = std::atan2(velocity.y, velocity.x); //angle track object based on velocity direction
 
-    TrackObject* track = new TrackObject(pos, angle, geometry_, shader_); //create new track object at given position with the same rotation as the car
+    TrackObject* track = new TrackObject(pos, angle, geometry_, &track_shader); //create new track object at given position with the same rotation as the car
     trackObjArr.push_back(track); //add new track object to array
     
     float currentSpeed = glm::length(velocity) * float(delta_time);//magnitude of velocity vector adjusted to delta time
