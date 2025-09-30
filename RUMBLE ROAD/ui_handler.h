@@ -3,6 +3,7 @@
 
 #include "defs.h"
 #include "object_manager.h"
+#include "texture_handler.h"
 
 namespace game {
 	class uiHandler {
@@ -20,6 +21,9 @@ namespace game {
 		PlayerGameObject* player_;
 		int* numTowers;
 
+		//Textures
+		TextureHandler *rocketTex;
+
 		//Window Height and Width
 		const int uiH = 100;
 		const int uiW = 100;
@@ -29,6 +33,7 @@ namespace game {
 
 		//functions to render specific panels
 		void RenderDebugPanel();
+		void RenderRocketClip();
 	};
 }
 #endif

@@ -82,9 +82,6 @@ PlayerGameObject::~PlayerGameObject() {
 
 void PlayerGameObject::handlePlayerControls(double delta_time)
 {
-
-    
-
     // Check for player input and make changes accordingly
     //Moving forward aclerates the fastest, then reversing, then sideways movement
     if (glfwGetKey(windowPtr, GLFW_KEY_W) == GLFW_PRESS) {

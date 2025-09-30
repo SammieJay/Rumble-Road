@@ -5,9 +5,18 @@ namespace game {
 		objManager = objMngr;
 		window_ = window;
 		numTowers = remainingTowers;
+
+		// Directory with game resources such as textures
+		const std::string resources_directory = RESOURCES_DIRECTORY;
+
+		//Instantiate Rocket Texture
+		rocketTex = new TextureHandler(resources_directory + "/textures/rocket_item.png");
 	}
 
 	uiHandler::~uiHandler() {
+		//Delete Tex handler
+		delete rocketTex;
+		
 		//Terminate UI
 		ImGui_ImplOpenGL3_Shutdown();
 		ImGui_ImplGlfw_Shutdown();
@@ -34,7 +43,7 @@ namespace game {
 
 		//Render side panel
 		RenderDebugPanel();
-		
+		RenderRocketClip();
 		
 		//NEW WINDOW
 		ImGui::SetNextWindowPos(ImVec2 (0.0f, 300.0f));
@@ -92,5 +101,27 @@ namespace game {
 
 		ImGui::Text("Towers Remaining: %d/%d", *numTowers, NUM_TOWERS);
 		ImGui::End();//end UI code
+	}
+
+	void uiHandler::RenderRocketClip(){
+		ImGui::SetNextWindowPos(ImVec2(0.0f, 100.0f));
+		ImGui::SetNextWindowBgAlpha(0.2f);
+		ImGui::Begin("Rocket HUD", NULL, //set flags to make ui immovable and no title
+			ImGuiWindowFlags_NoTitleBar |
+			ImGuiWindowFlags_NoMove |
+			ImGuiWindowFlags_AlwaysAutoResize 
+			//ImGuiWindowFlags_NoBackground
+		);
+		
+		float spacing = 10.0f;
+		int rocketCount = player_->getRocketMag();
+
+		for (int i = 0; i < rocketCount; i++)
+		{
+			// Draw each image
+			ImGui::Image((ImTextureID)(intptr_t)rocketTex->getMainTex(), ImVec2(125.0f, 21.0f));
+			ImGui::NewLine();
+		}
+		ImGui::End();
 	}
 }
